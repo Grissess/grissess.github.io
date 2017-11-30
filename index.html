@@ -1,0 +1,120 @@
+<html>
+	<head>
+		<title>Grissess' Github</title>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<h1>Grissess' Github</h1>
+
+		<p>
+			Hello, and welcome to my domain. I will update this site
+			periodically, but don't expect it to be fast.
+		</p>
+
+		<p>
+			Information on my actual software projects will be coming
+			eventually.
+		</p>
+
+		<p class="stat" id="timestat">Last Update/Verification: 2017-11-30.</p>
+
+		<h2>Security</h2>
+
+		<h3>Cryptographic Secrets</h3>
+
+		<p class="stat" id="keystat">Key Status: <span class="positive">No known compromises.</span></p>
+
+		<p>
+			My PGP key IDs are as follows:
+		</p>
+
+		<table class="grid">
+			<tr>
+				<th>Fingerprint</th>
+				<th>Algorithm</th>
+				<th>Usage</th>
+				<th>Notes</th>
+			</tr>
+			<tr>
+				<td><span class="code">B2EF 0643 0935 C7F1 1041  070C 031F F9C1 <strong>3AA4 EC54</strong></span></td>
+				<td>RSA 4096-bit</td>
+				<td>Signing, <em>Certification</em></td>
+				<td>Master key. The private material is stored, encrypted, on an air-gapped device. Current expiration policy is <em>two years from the date</em> of update. Note that this may also be used for <em>signing</em>; because of its unusually tight control, consider anything signed with this key to be unusually high-integrity.</td>
+			</tr>
+			<tr>
+				<td><span class="code">6A94 4B64 780E 03DB 1BEF  76C6 66F8 5611 <strong>772B 7A77</strong></span></td>
+				<td>RSA 4096-bit</td>
+				<td>Encryption</td>
+				<td>My main encryption key. I release this to <em>trusted</em> devices, which presently includes a Yubikey 4 nano. Use this key to communicate with me in confidence. Expiration is no more than <em>one year from the date</em> of update.</td>
+			</tr>
+			<tr>
+				<td><span class="code">7EEC 2278 4D6E 149D EAA4  9E0B 0B01 EE49 <strong>85DD 01B1</strong></span></td>
+				<td>RSA 4096-bit</td>
+				<td>Authentication</td>
+				<td>Expiration policy is no more than <em>one year from the date</em> of update. This is not yet released from the certification device.</td>
+			</tr>
+			<tr>
+				<td><span class="code">77F3 0065 1C0C 0EA2 C666  07DF 5D00 0E6F <strong>5393 76FB</strong></span></td>
+				<td>RSA 4096-bit</td>
+				<td>Signing</td>
+				<td>My main signing key. I release this to <em>trusted</em> devices, as above. Use this key to verify integrity of my messages in the usual case. <em>All</em> of my legitmately-sourced outbound email uses this key by default, and all of my Git projects sign commits with this key by default; note that physical interaction with the Yubikey is required to complete the signing process. Expiration policy is no more than <em>one year from the date</em> of update.</td>
+			</tr>
+		</table>
+
+		<p>
+			I keep a fairly strong password rotation of around a dozen
+			passwords, alphanumeric and mixed-case, all of which are at least
+			10 characters, and almost all of which are at least 20 characters,
+			as well as some variants to permute. They are not physically stored
+			anywhere, including in any sort of password manager; I have them
+			memorized. They are organized into four active tiers (including
+			shared secrets, web services, organization credentials, and local
+			device credentials), rotated to a new scheme every couple of years.
+			The storage password for the Certification PGP key is especially
+			controlled, and is not reused.
+		</p>
+
+		<h3>Security Incidents</h3>
+
+		<p class="stat" id="infosecstat">Breach Status: <span class="positive">No known exfiltration of confidential data.</span></p>
+
+		<ul>
+			<li>
+				I have visited the <a
+					href="https://www.nsa.gov/about/cryptologic-heritage/museum/">National
+					Cryptologic Museum</a> recently. Note that it essentially
+				shares a campus with the US National Security Agency. My secure
+				elements were sequestered safely on my person and unpowered; I
+				took measures to check for tampering with my devices afterward,
+				and found no evidence. (The Museum is not bad, by the way, but
+				definitely meant for the masses :)
+			</li>
+			<li>
+				I operate a <a href="https://mail.yahoo.com/">Yahoo Mail</a>
+				account as my primordial mail account, and as a "trust root"
+				for a number of my web services. After <a
+				   href="http://money.cnn.com/2016/09/22/technology/yahoo-data-breach/index.html">various
+				   reports</a> of a <a
+			   href="https://en.wikipedia.org/wiki/Yahoo!_data_breaches">data
+			   breach</a>, the password for that account was rotated to a variant on a
+			   higher tier. Persons who want to email me are still encouraged to use my PGP
+			   key for confidentiality, and verify my applicable PGP signatures.
+			</li>
+		</ul>
+
+		<h3>Authority Accountability and Sousveillance</h3>
+
+		<p class="stat" id="warrantstat">Warrant Canary: <span class="positive">I have not been served an order compelling me to secrecy.</span></p>
+		
+		<p>Pursuant the above, I have also not been ordered to release any of the confidential data I can access.</p>
+
+		<p>Removal or failure to update the above should be considered evidence to the contrary. Last updated 2017-11-30.</p>
+
+		<footer>
+			&copy; 2017 Graham Northup, licensed under the <a
+				href="http://creativecommons.org/licenses/by/4.0/">Creative
+				Commons Attribution 4.0 International License</a>--feel free to
+			take and use these assets, but please credit your sources :)
+		</footer>
+	</body>
+</html>

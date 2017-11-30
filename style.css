@@ -1,0 +1,101 @@
+body {
+	background-color: #321;
+	color: #ddd;
+}
+
+@media all and (min-width: 800px) {
+	body {
+		padding: 0 10%;
+	}
+}
+
+a {
+	color: #0aa;
+}
+
+a[href]:active {
+	color: #f0f;
+}
+
+a[href]:visited {
+	color: #0a4;
+}
+
+h1, h2, h3, footer {
+	text-align: center;
+	padding: 0.25em 0;
+	margin 0.25em 0;
+}
+
+h1, h2, h3 {
+	font-variant: small-caps;
+}
+
+h1 {
+	border-bottom: 2px solid #777;
+	font-size: 275%;
+}
+
+h2 {
+	border-bottom: 1px solid #070;
+	font-size: 225%;
+}
+
+h3 {
+	border-bottom: 1px solid #a70;
+	font-size: 150%;
+}
+
+footer {
+	color: #aaa;
+	font-size: 75%;
+	font-style: italic;
+	border-top: 1px solid #555;
+}
+
+table.grid, table.grid td, table.grid th {
+	border: 1px solid #077;
+}
+
+table.grid {
+	border-collapse: collapse;
+}
+
+table.grid td, table.grid th {
+	padding: 0.25em 0.5em;
+}
+
+em {
+	text-decoration: #0a0 underline;
+}
+
+p, td, th, li {
+	line-height: 150%;
+}
+
+li {
+	padding: 1em 0;
+}
+
+p.stat {
+	font-size: 125%;
+	font-weight: bold;
+}
+
+.positive {
+	color: #0f0;
+}
+
+.negative {
+	color: #f00;
+}
+
+.code {
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	background-color: #ddd;
+	color: #222;
+	font-family: monospace;
+	font-size: 80%;
+	white-space: pre;
+}
