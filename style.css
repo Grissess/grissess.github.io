@@ -86,6 +86,14 @@ p.stat {
 	color: #0f0;
 }
 
+.neutral {
+	color: #00f;
+}
+
+.advisory {
+	color: #ff0;
+}
+
 .negative {
 	color: #f00;
 }
