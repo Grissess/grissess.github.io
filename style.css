@@ -3,6 +3,10 @@ body {
 	color: #ddd;
 }
 
+:target {
+	background-color: #641 !important;
+}
+
 @media all and (min-width: 800px) {
 	body {
 		padding: 0 10%;

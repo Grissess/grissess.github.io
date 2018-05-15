@@ -16,13 +16,13 @@
 			eventually.
 		</p>
 
-		<p class="stat" id="timestat">Last Update/Verification: 2018-01-21.</p>
+		<p class="stat" id="timestat">Last Update/Verification: 2018-05-15.</p>
 
 		<h2>Security</h2>
 
-		<h3>Cryptographic Secrets</h3>
+		<h3 id="secrets">Cryptographic Secrets</h3>
 
-		<p class="stat" id="keystat">Key Status: <span class="positive">No known compromises.</span> <span class="advisory">Keys updated as of 2018-01-21; refresh your keyrings.</span></p>
+		<p class="stat" id="keystat">Key Status: <span class="positive">No known compromises.</span> <span class="advisory">Keys updated as of 2018-01-21.</span></p>
 
 		<p class="stat" id="PARPENTstat">PARPENT Status: <span class="positive">Ready, no compromises.</span></p>
 
@@ -37,25 +37,25 @@
 				<th>Usage</th>
 				<th>Notes</th>
 			</tr>
-			<tr>
+			<tr id="keyC">
 				<td><span class="code">B2EF 0643 0935 C7F1 1041  070C 031F F9C1 <strong>3AA4 EC54</strong></span></td>
 				<td>RSA 4096-bit</td>
 				<td>Signing, <em>Certification</em></td>
 				<td>Master key. The private material is stored, encrypted, on an air-gapped device. Current expiration policy is <em>two years from the date</em> of update. Note that this may also be used for <em>signing</em>; because of its unusually tight control, consider anything signed with this key to be unusually high-integrity.</td>
 			</tr>
-			<tr>
+			<tr id="keyE">
 				<td><span class="code">6A94 4B64 780E 03DB 1BEF  76C6 66F8 5611 <strong>772B 7A77</strong></span></td>
 				<td>RSA 4096-bit</td>
 				<td>Encryption</td>
 				<td>My main encryption key. I release this to <em>trusted</em> devices, which presently includes a Yubikey 4 nano. Use this key to communicate with me in confidence. Expiration is no more than <em>one year from the date</em> of update.</td>
 			</tr>
-			<tr>
+			<tr id="keyA">
 				<td><span class="code">7EEC 2278 4D6E 149D EAA4  9E0B 0B01 EE49 <strong>85DD 01B1</strong></span></td>
 				<td>RSA 4096-bit</td>
 				<td>Authentication</td>
 				<td>Expiration policy is no more than <em>one year from the date</em> of update. This is not yet released from the certification device.</td>
 			</tr>
-			<tr>
+			<tr id="keyE">
 				<td><span class="code">77F3 0065 1C0C 0EA2 C666  07DF 5D00 0E6F <strong>5393 76FB</strong></span></td>
 				<td>RSA 4096-bit</td>
 				<td>Signing</td>
@@ -76,12 +76,49 @@
 			controlled, and is not reused.
 		</p>
 
-		<h3>Security Incidents</h3>
+		<h3 id="incidents">Security Incidents</h3>
 
 		<p class="stat" id="infosecstat">Breach Status: <span class="positive">No known exfiltration of confidential data.</span></p>
 
 		<ul>
-			<li>
+			<li id="efail">
+				Earlier today, specifics of the <a
+					href="https://efail.de/">EFAIL</a> data exfiltration attack
+				were released, which leverage a lack of authenticity and cipher
+				malleability to inject HTML exfiltration code that would
+				activate when the message (including its confidential parts)
+				was decrypted and rendered. As a Thunderbird/Enigmail user, I
+				am, in theory, affected; however:
+				<ul>
+					<li>Due to tracking concerns, I have instructed Thunderbird
+						to never load remote resources by default;</li>
+					<li>My HSM requires physical interaction to decrypt a
+						message, even when Enigmail wishes to eagerly do so as
+						soon as I peruse it (since, indeed, no indication of
+					the authenticity/confidentiality of the message is
+					displayed in the tree view, something I've been looking for
+				a solution to for several months now).</li>
+				</ul>
+				Based on my understanding of the attack, this is a fair, but
+				not perfect, mitigation. Anyone wishing to send me an encrypted
+				email using the PGP standard should (1) strongly prefer to send
+				authenticated messages where possible, and (2) instruct their
+				 client to compose text/plain messages by default (as I have also done).
+				 The latter does not prevent an, e.g., MITM adversary from wrapping the
+				 previous body in an HTML email, and a known weakness in the PGP protocol
+				 permits the former to be removed. Thus, the crux of this mitigation relies
+				 on Thunderbird never loading remote content, which has a worrisomely-large
+				 attack surface and was likely never designed to be a significant security
+				 (as opposed to privacy) implement. As recommended by the EFF, I will
+				 likely switch over to decrypting messages in a terminal or viewing program
+				 with no implementation of HTML, which gives all the more reason to send me
+				 text/plain messages. (The encrypted source for these emails can be gotten
+				 safely from Thunderbird, albeit annoyingly, by timing out the automatic
+				 attempted decryption while not authorizing the HSM. Again, in theory,
+				 since <em>any</em> application can ask my HSM for decryption, there is a
+				 race condition here, but circumstances can be controlled if need be.)
+			</li>
+			<li id="ncm">
 				I have visited the <a
 					href="https://www.nsa.gov/about/cryptologic-heritage/museum/">National
 					Cryptologic Museum</a> recently. Note that it essentially
@@ -91,7 +128,7 @@
 				and found no evidence. (The Museum is not bad, by the way, but
 				definitely meant for the masses :)
 			</li>
-			<li>
+			<li id="ymail">
 				I operate a <a href="https://mail.yahoo.com/">Yahoo Mail</a>
 				account as my primordial mail account, and as a "trust root"
 				for a number of my web services. After <a
@@ -104,16 +141,16 @@
 			</li>
 		</ul>
 
-		<h3>Authority Accountability and Sousveillance</h3>
+		<h3 id="gags">Authority Accountability and Sousveillance</h3>
 
 		<p class="stat" id="warrantstat">Warrant Canary: <span class="positive">I have not been served an order compelling me to secrecy.</span></p>
 		
 		<p>Pursuant the above, I have also not been ordered to release any of the confidential data I can access.</p>
 
-		<p>Removal or failure to update the above should be considered evidence to the contrary. Last updated 2018-01-21.</p>
+		<p>Removal or failure to update the above should be considered evidence to the contrary. Last updated 2018-05-15.</p>
 
 		<footer>
-			&copy; 2017 Graham Northup, licensed under the <a
+			&copy; 2018 Graham Northup, licensed under the <a
 				href="http://creativecommons.org/licenses/by/4.0/">Creative
 				Commons Attribution 4.0 International License</a>--feel free to
 			take and use these assets, but please credit your sources :)
